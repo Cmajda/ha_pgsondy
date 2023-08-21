@@ -1,0 +1,10 @@
+{
+	"domain": "pg_sondy",
+	"name": "PG sondy",
+	"documentation": "https://github.com/Cmajda/ha_pg_sondy",
+	"issue_tracker": "https://github.com/Cmajda/ha_pg_sondy/issues",
+	"dependencies": [],
+	"codeowners": [ "@cmajda" ],
+	"version": "0.0.1",
+	"requirements": []
+}

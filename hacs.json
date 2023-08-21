@@ -1,0 +1,14 @@
+{
+	"name": "pg_sondy",
+	"render_readme": true,
+	"description": "PG sondy",
+	"version": "0.0.1",
+	"domains": [
+		"sensor"
+	],
+	"country": "CZ",
+	"hide": false,
+	"i18n": false,
+	"hacs": true,
+	"homeassistant": "0.110.0"
+}
