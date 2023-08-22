@@ -1,16 +1,17 @@
 # PG sondy
-získání dat z meteostanic https://pgsonda.cz/prehled/
-zatím jen suchomasty start
-
+získání dat z meteostanic https://pgsonda.cz/prehled/  
+zatím jen suchomasty start  
 
 ## integrace senzoru
+
 ```yaml
 senzor:
-	- platform: pg_sondy
-	  url: "https://www.pgsonda.cz/suchomasty/"
-	  name: klonk
+- platform: pg_sondy
+  url: "https://www.pgsonda.cz/suchomasty/"
+  name: klonk
 ```
 ## příklad nastavení karty
+
 ```yaml
 type: entities
 entities:
