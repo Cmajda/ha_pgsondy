@@ -53,12 +53,18 @@ class SondaSensor(Entity):
     # Hodnota senzoru
     @property
     def state(self):
-        return self._value
+        if self._value is not None:
+            return round(float(self._value), 1)
+        return None
 
     # Hodnota senzoru
     @property
     def native_value(self):
         return self._value
+    
+    @property
+    def unit_of_measurement(self):
+        return "m/s"
 
     # Unikátní identifikátor senzoru
     @property
@@ -162,8 +168,8 @@ class RotationSensor(Entity):
         if page.status_code == 200:
             tree = html.fromstring(page.content)
             if self._attribute == "wind_rotation":
-                rotation_info = tree.xpath('/html/body/windgraf[1]/svg/line[5]')[0].attrib
-                rotation_value = rotation_info.get("transform", "").split("(")[1].split(" ")[0]
-                self._value = round(float(rotation_value))
+                rotation_text = tree.xpath('/html/body/windgraf[1]/svg/text[5]')[0].text
+                rotation_value = int(rotation_text.replace("°", ""))
+                self._value = rotation_value
         else:
             _LOGGER.error("Failed to fetch data from %s", self._url)
